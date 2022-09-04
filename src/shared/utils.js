@@ -1,4 +1,5 @@
 import { useStore } from "../store";
+import { router } from "../router";
 
 export function loadMF(url) {
   const script = document.createElement("script");
@@ -6,16 +7,30 @@ export function loadMF(url) {
   script.setAttribute("async", "");
   script.setAttribute("crossorigin", "");
   script.setAttribute("src", url);
+  script.addEventListener("load", () => {
+    const store = useStore();
+    if (store.isLoadingWC) store.$patch({ isLoadingWC: false });
+  });
   document.body.appendChild(script);
 }
-export const mfurls = {
-  "wc-landing": import.meta.env.VITE_MF_LANDING,
-};
+export const mfurls = [
+  {
+    url: import.meta.env.VITE_MF_LANDING,
+    routeName: "Home",
+    name: "wc-landing",
+  },
+];
 
 export function init() {
   const loadWCs = () => {
-    Object.keys(mfurls).forEach((key) => {
-      // loadMF(`${mfurls[key]}/${wc-landing.js}`);
+    const routeActive = router.currentRoute.value.name;
+    const index = mfurls.findIndex((item) => item.routeName === routeActive);
+    const routeActiveMF = mfurls.splice(index, 1);
+    mfurls.unshift(...routeActiveMF);
+    const store = useStore();
+    store.$patch({ isLoadingWC: true });
+    mfurls.forEach((wc) => {
+      loadMF(`${wc.url}/${wc.name}.js`);
     });
   };
 

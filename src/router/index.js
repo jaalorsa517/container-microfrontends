@@ -3,7 +3,7 @@ import routes from "./routes"
 
 const _router = createRouter({
   history: createWebHistory(),
-  routes
-})
+  routes,
+});
 
 export const  router= _router
