@@ -6,6 +6,8 @@
 
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
+  color: #213547;
+  background-color: #ffffff;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -52,16 +54,6 @@ h1 {
   max-width: 1280px;
   text-align: center;
   margin: 0 auto;
-}
-
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
 }
 
 .loader {
