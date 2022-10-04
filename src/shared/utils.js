@@ -1,5 +1,6 @@
 import { useStore } from "../store";
 import { router } from "../router";
+import { mfurls } from "./constantes/microfront_url.constantes";
 
 export function loadMF(url) {
   const script = document.createElement("script");
@@ -13,13 +14,6 @@ export function loadMF(url) {
   });
   document.body.appendChild(script);
 }
-export const mfurls = [
-  {
-    url: import.meta.env.VITE_MF_LANDING,
-    routeName: "Home",
-    name: "wc-landing",
-  },
-];
 
 export function init() {
   const loadWCs = () => {

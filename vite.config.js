@@ -7,7 +7,7 @@ export default defineConfig({
     vue({
       template: {
         compilerOptions: {
-          isCustomElement: (tag) => tag.includes("wc-"),
+          isCustomElement: (tag) => tag.includes("-"),
         },
       },
     }),

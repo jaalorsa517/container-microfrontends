@@ -2,7 +2,8 @@
 import routes from "../router/routes";
 const dicNames = {
   Home: "Inicio",
-  About: "Acerca",
+  Vanilla: "Vanilla",
+  Angular: "Angular",
 };
 const menu = routes.map(({ name, path }) => ({ name: dicNames[name], path }));
 const emit = defineEmits(["clickItem"]);

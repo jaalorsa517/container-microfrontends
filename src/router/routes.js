@@ -1,5 +1,6 @@
 import Home from "../views/Home.vue";
-import About from "../views/About.vue";
+import Angular from "../views/Angular.vue";
+import Vanilla from "../views/Vanilla.vue";
 
 export default [
   {
@@ -8,8 +9,13 @@ export default [
     component: Home,
   },
   {
-    path: "/about",
-    name: "About",
-    component: About,
+    path: "/angular",
+    name: "Angular",
+    component: Angular,
+  },
+  {
+    path: "/vanilla",
+    name: "Vanilla",
+    component: Vanilla,
   },
 ];
