@@ -1,5 +1,6 @@
 import Home from "../views/Home.vue";
-import About from "../views/About.vue";
+import Alert from "../views/Alert.vue";
+import Animals from "../views/Animals.vue";
 
 export default [
   {
@@ -8,8 +9,17 @@ export default [
     component: Home,
   },
   {
-    path: "/about",
-    name: "About",
-    component: About,
+    path: "/alert",
+    name: "Alert",
+    component: Alert,
+  },
+  {
+    path: "/animals",
+    name: "Animals",
+    component: Animals,
+  },
+  {
+    path: "/:pathMatch(.*)*",
+    redirect: "/",
   },
 ];

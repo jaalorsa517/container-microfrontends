@@ -19,6 +19,16 @@ export const mfurls = [
     routeName: "Home",
     name: "wc-landing",
   },
+  {
+    url: import.meta.env.VITE_MF_ALERT,
+    routeName: "Alert",
+    name: "wc-alert",
+  },
+  {
+    url: import.meta.env.VITE_MF_ANIMALS,
+    routeName: "Animals",
+    name: "wc-animals",
+  },
 ];
 
 export function init() {
